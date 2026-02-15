@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+
+    <div class="app">
+
+        <header>
+            <h1>Weather App</h1>
+            <select id="unitToggle">
+                <option value="metric">°C</option>
+                <option value="imperial">°F</option>
+            </select>
+        </header>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search city...">
+        </div>
+
+        <div id="errorMessage" class="error hidden"></div>
+
+        <div id="weatherCard" class="card hidden">
+            <div class="top">
+                <h2 id="cityName"></h2>
+                <img id="weatherIcon" />
+            </div>
+            <h1 id="temperature"></h1>
+            <p id="description"></p>
+
+            <div class="extra">
+                <div>
+                    <span>Humidity</span>
+                    <p id="humidity"></p>
+                </div>
+                <div>
+                    <span>Wind</span>
+                    <p id="wind"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="forecast" class="forecast hidden"></div>
+
+        <div id="loading" class="loading hidden"></div>
+
+    </div>
+    
+
+    <script src="weather.js"></script>
+</body>
+</html>
