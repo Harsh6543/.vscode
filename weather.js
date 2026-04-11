@@ -68,7 +68,7 @@ class WeatherApp {
             this.showError("");
 
             const res = await fetch(
-                `https://api.openweathermap.org/data/2.5/weather?q=${city},IN&appid=${this.API_KEY}&units=${this.unit}`
+                `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.API_KEY}&units=${this.unit}`
             );
 
 
