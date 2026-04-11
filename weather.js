@@ -60,19 +60,22 @@ class WeatherApp {
 
 
     async fetchWeather(city) {
+    if (!city) return;
+    try {
+        this.showLoading(true);
+        this.showError("");
 
-        if (!city) return;
+        let res = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${city},IN&appid=${this.API_KEY}&units=${this.unit}`
+        );
 
-        try {
-            this.showLoading(true);
-            this.showError("");
-
-            const res = await fetch(
+        if (!res.ok) {
+            res = await fetch(
                 `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.API_KEY}&units=${this.unit}`
             );
+        }
 
-
-            if (!res.ok) throw new Error("City not found");
+        if (!res.ok) throw new Error("City not found");
 
             const data = await res.json();  // FIRST get data
 
